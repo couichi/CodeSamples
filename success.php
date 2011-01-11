@@ -1,0 +1,1 @@
+<?php	include "includes/autoload.php";include "includes/header.php";$display = new Display();$display->success("Success!");

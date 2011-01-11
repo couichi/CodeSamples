@@ -1,0 +1,131 @@
+div.code
+{
+   display: block;
+   margin: 2em 0;
+   white-space: pre;
+   overflow: auto;
+   width: 718px;
+   line-height: 1.4;
+   border: 1px solid #ccc;
+   background: #fff;
+   padding: 8px;
+}
+
+div.description
+{
+   display: block;
+   margin: 2em 0;
+   white-space: pre;
+   overflow: auto;
+   width: 695;
+   line-height: 1.4;
+   border: 5px dotted #ccc;
+   background: #fff;
+   padding: 8px;
+
+}
+
+span.stag
+{
+padding:2px;
+background:#FFF;
+border: 1px solid #55F;
+}
+
+a.tag
+{
+background:#BBF;
+color:#11F;
+padding:3px;
+margin:2px;
+}
+
+div.problem
+{
+vertical-align:middle;
+margin:0 auto;
+background-image:url(../images/bg_2.png);
+background-repeat:repeat-x;
+
+width:600px;
+height:32px;
+}
+
+.problem2
+{
+vertical-align:middle;
+margin:0 auto;
+background-image:url(../images/bg_2.png);
+background-repeat:repeat-x;
+
+width:600px;
+height:32px;
+}
+
+.problem3
+{
+vertical-align:middle;
+margin:0 auto;
+background-image:url(../images/bg_3.gif);
+background-repeat:repeat-x;
+
+width:600px;
+height:32px;
+}
+
+div.monster
+{
+text-align:center;
+display:block;
+vertical-align:middle;
+}
+
+div.dark
+{
+vertical-align:middle;
+margin:0 auto;
+width:600px;
+height:600px;
+background-color:#000;
+}
+
+div.mesbox
+{
+vertical-align:middle;
+margin:0 auto;
+color:#fff;
+text-align:center;
+display:block;
+vertical-align:middle;
+width:500px;
+border-radius:10px;
+border:3px solid #fff;
+}
+
+table
+{
+border-collapse:collapse;
+}
+
+div.mesbox2
+{
+float:right;
+vertical-align:middle;
+margin:0 auto;
+color:#fff;
+border-radius:10px;
+border:3px solid #fff;
+background-color:#000;
+width:500;
+padding-left:6px;
+}
+
+div.ltip
+{
+position:relative;
+top:8px;
+float:left;
+border-style:solid;
+border-right:solid 8px;
+border-right-color:#fff;
+}

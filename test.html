@@ -1,0 +1,51 @@
+<html> 
+<head> 
+<title>CodeSamples
+</title> 
+<script type="text/javascript" src="sh/scripts/shCore.js"></script> 
+<script type="text/javascript" src="sh/scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="sh/scripts/shBrushPython.js"></script> 	
+<script type="text/javascript" src="sh/scripts/shBrushScheme.js"></script> 	
+		
+<link rel="stylesheet" type="text/css" href="includes/style.css"> 
+<link rel="stylesheet" type="text/css" href="sh/styles/shCore.css"> 
+<link rel="stylesheet" type="text/css" href="sh/styles/shThemeEclipse.css"> 
+			
+<script type="text/javascript">SyntaxHighlighter.all();</script> 
+
+</head>    
+ 
+		
+	<pre class="brush: php">
+	
+	function convert_template($filename) {
+    global $TEMPLATE_DIR;
+    if (! file_exists($filename) &amp;&amp; $TEMPLATE_DIR)
+        $filename = "$TEMPLATE_DIR/$filename";
+    $cachename = $filename . '.cache';
+    if (! file_exists($cachename) || filemtime($cachename) < filemtime($filename)) {
+        $s = file_get_contents($filename);
+        $s = convert_string($s);
+        file_put_contents($cachename, $s);
+    }
+    return $cachename;
+}
+ 
+</pre> 
+	
+	<div class=code>
+	abc
+	</div>
+	
+	<pre class="brush: scheme"> 
+		
+(define foo
+  (lambda (x)
+    (if (= x 1337) ;; obligatory
+        #t
+        #| I thought about a bunch of things
+        to say in this multi-line comment, but
+        none of them were interesting |#
+        (begin (printf "Hello world!") 'bar))))
+
+</pre>

@@ -1,0 +1,29 @@
+Hi I've been developing a home-use web service which stores sample codes for my programming study with PHP and MySQL ( Xampp 1.7.3 in windows).  
+Since I want to attach multiple tags to a sample code, I need to do multiple queries when posting a sample code; depending on how many tags I want to attach to a code.
+
+At the first try, I used PDO. Because the good old mysql_ functions in PHP doesn't really support stored procedures and I want to use stored procedures to cut down some queries.  
+Although there is a way around to use it for a single stored procedure:
+http://bobfield.blogspot.com/2006/09/php-and-mysql-stored-procedures.html  
+It didn't work for me when I tried multiple queries. It gives me "**Commands out of sync; you can't run this command now**" error and I couldn't fix that.  ( and I don't think I can make my queries pack in a single stored procedure unless MySQL supports array)
+
+Anyway, let's get back to what I did with PDO.  
+Here's the algorithm I use to post codes into the database:
+
+<ol>
+<li>Validate inputs ($_POST['code'], $_POST['langid'], etc)
+<li>Insert the code into the codes table
+<li>Get the last_insert_id for the code
+<li>Check each tag if it exists in the database
+<ul>
+<li>If it is, get the tag_id and goto 5.
+<li>Else insert it into the tag table
+<ul>
+  <li>Get the last_insert_id for the tag
+  <li>Insert the lang_id and the tag_id into the lang_tag table and goto 5.
+</ul>
+</ul>
+<li>Insert code_id and tag_id into code_tag table
+</ol>
+
+
+I created 2 stored procedures sp_code_insert for (2,3), and sp_tag_insert for (4,5,6)

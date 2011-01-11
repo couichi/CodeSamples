@@ -1,0 +1,1 @@
+<?php	class Display{	public function error($text)	{		foreach($text as $var)		{			echo $var."<br>";		}	}		public function success($text)	{		echo $text;	}	}
