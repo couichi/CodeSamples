@@ -71,15 +71,22 @@ class PdoUpdateCode extends PdoConnect
 	
 	public function updateCode($_POST)
 	{
+		$code = $_POST['code'];
+		$description = $_POST['description'];
+		$linenum = $_POST['linenum'];
+		$codeid = $_POST['codeid'];
 		$date = date("Y-m-d H:i:s", time());
-		$sql = "update codes set code = ?, description = ?, linenum = ?, modified = ?";
-		$sth = $this->pdo->prepare($sql);
+		$sql = "update codes set code = '$code', description = '$description', linenum = $linenum, modified = '$date' where id=$codeid";
+		$res = $this->pdo->exec($sql) or die($res->errorInfo());
+		//$sth = $this->pdo->prepare($sql);
+		/*
 		$sth->bindParam(1,$_POST['code']);
 		$sth->bindParam(2,$_POST['description']);
 		$sth->bindParam(3,$_POST['linenum']);
 		$sth->bindParam(1,$date);
-		$res = $sth->execute;
-
+		$res = $sth->execute or die($sth->errorInfo());
+		var_dump($sth);
+		*/
 		if($res)
 		{
 			return 1;
@@ -96,12 +103,21 @@ class PdoUpdateCode extends PdoConnect
 		if($tagcsv=="" || $tagcsv==" ")
 		{
 			$codeid = $_POST['codeid'];
-			//delete all tag
-			$sql = "delete from code_specs where code_id=?";
-			$sth = $this->pdo->prepare($sql);
-			$sth->bindParam(1,$codeid);
-			$res = $sth->execute;
 			
+			//delete all tag
+			try{
+			$sql = "delete from code_specs where code_id=$codeid";
+			//$sth = $this->pdo->prepare($sql);
+			$res = $this->pdo->exec($sql) or die($this->pdo->errorInfo());
+			//$sth->bindParam(1,$codeid);
+			//$res = $sth->execute;
+			}
+			catch(PDOException $e)
+			{
+			echo "" . $e->getMessage();
+			echo "" . $e->getCode();
+			}
+			//var_dump($sth);
 			if($res)
 			{
 				return 1;

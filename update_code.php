@@ -22,11 +22,11 @@ $_POST[tagids]
 </pre>";
 */
 session_start();
-var_dump($_SESSION);
+//var_dump($_SESSION);
 
 include "includes/autoload.php";
 
-$emp_ok = array('tag');
+$emp_ok = array('tag','tagids');
 $validate = new Validation();
 $err = $validate->checkBlank($_POST,$emp_ok);
 
@@ -63,7 +63,8 @@ else
 	if($_SESSION['tags']!=$_POST['tag'])
 	{
 		//update tags
-		$res[] = $db->updateTag($_POST['tag']);
+		
+		$res[] = $db->updateTags($_POST['tag']);
 	}
 	else
 	{
@@ -74,9 +75,12 @@ else
 if(array_sum($res)!=2)
 {
 	//error
+	print_r($res);
+	echo "error";
 }
 else
 {
+	echo "success";
 	$jump = new Jump();
 }
 
