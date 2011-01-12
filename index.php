@@ -42,4 +42,9 @@ echo "</textarea><br>";
 
 echo "</form>";
 */
+	
+$tl = new TotalLines();
+$tl->connect();
+$tl->getTotalLines();
+
 ?>

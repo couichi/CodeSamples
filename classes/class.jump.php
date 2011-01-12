@@ -1,1 +1,1 @@
-<?php	class Jump{		public function Jump($url = "success.php",$param[] = "")	{		$pstring = "?";		foreach($param as $key => $val)		{			$pstring.="$key=$val&";		}		$pstring = substr($pstring, -1);		header("location:$url".$pstring);	}}
+<?php	class Jump{		public function Jump($url = "success.php",$param = "")	{		$pstring = "?";		foreach($param as $key => $val)		{			$pstring.="$key=$val&";		}		$pstring = substr($pstring, -1);		header("location:$url".$pstring);	}}
