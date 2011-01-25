@@ -98,7 +98,8 @@ class PdoSearch extends PdoConnect
 			case 'php':
 				echo '<script type="text/javascript" src="sh/scripts/shBrushPhp.js"></script> ';
 				break;
-			case '':
+			case 'lisp':
+				echo '<script type="text/javascript" src="sh/scripts/shBrushLisp.js"></script> ';
 				break;
 		}
 	}
