@@ -93,6 +93,7 @@ class PdoCodesInsert extends PdoConnect
 	{
 		$tagcsv = rtrim($tagcsv,",");
 		$tags = explode(",",$tagcsv);
+		$minus = array();
 		foreach($tags as $tag)
 		{
 			if(strlen($tag)<2)
