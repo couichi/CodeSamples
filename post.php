@@ -7,6 +7,7 @@ $_POST['code'];
 $_POST['description']; emp_ok
 */
 include "includes/autoload.php";
+include "includes/print_rp.php";
 
 $emp_ok = array("tag","description");
 $validate = new Validation();
@@ -22,7 +23,7 @@ if($err[0]!="")
 	echo "Please go back and fill in the blanks</h1>";
 }
 else
-{
+{
 	if($validate->checkLang($_POST['lang'])->checkTag($_POST['tag'])->checkCode($_POST['code'])->checkDescription($_POST['description'])->checkErrors())
 	{
 		$_POST['date'] = date("Y-m-d H:i:s", time());

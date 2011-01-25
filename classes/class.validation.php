@@ -52,9 +52,13 @@ class Validation
 		{
 			foreach($lines as $val)
 			{
-				if(strlen($val)>80)
+				if(strlen($val)>85)
 				{
-					return false;
+					$this->boolean[] = -1;
+					echo strlen($val);
+					echo "$val is too long!<br>";
+					echo "It should be less than 80 characters long!";
+					return $this;
 				}
 			}
 			
