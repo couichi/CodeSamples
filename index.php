@@ -7,8 +7,12 @@ include "includes/autoload.php";
 
 
 
-echo "<a href='search_all.php?lang=35'>PHP</a> <a href=''>scheme+gimp</a> <a href=''>Assembly</a> <a href=''>JavaScript</a>";
+echo "<a href='search_all.php?lang=35'>PHP</a> ";
+echo "<a href='search_all.php?lang=27'>Lisp</a> ";
+
+echo "<a href=''>scheme+gimp</a> <a href=''>Assembly</a> <a href=''>JavaScript</a>";
 echo "<a href=''>Java</a> <a href=''>Python</a><br>";
+
 
 
 echo "<hr>";
