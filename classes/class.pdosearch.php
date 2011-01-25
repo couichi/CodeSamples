@@ -101,6 +101,9 @@ class PdoSearch extends PdoConnect
 			case 'lisp':
 				echo '<script type="text/javascript" src="sh/scripts/shBrushLisp.js"></script> ';
 				break;
+			case 'sql':
+				echo '<script type="text/javascript" src="sh/scripts/shBrushSql.js"></script> ';
+				break;
 		}
 	}
 	
