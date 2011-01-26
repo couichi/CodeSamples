@@ -4,6 +4,7 @@
 class Validation
 {
 	protected $boolean = array();
+	public $exlen;
 	
 	public function checkBlank($array,$emp_ok)
 	{
@@ -52,10 +53,11 @@ class Validation
 		{
 			foreach($lines as $val)
 			{
-				if(strlen($val)>85)
+				if(strlen($val)>80)
 				{
 					$this->boolean[] = -1;
-					echo strlen($val);
+					$this->exlen = strlen($val);
+					echo $this->exlen;
 					echo "$val is too long!<br>";
 					echo "It should be less than 80 characters long!";
 					return $this;

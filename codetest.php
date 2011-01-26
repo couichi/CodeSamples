@@ -1,8 +1,8 @@
 <?php
 
-$a="abc";
-echo "abc:".strlen($a)."<hr>";
-$a="abc\n";
-echo "abc with lb:".strlen($a)."<hr>";
-$a="abc";
-echo "abc with rlb:".strlen($a)."<hr>";
+include "includes/autoload.php"
+
+$ck = new Validation();
+$code = "";
+
+echo $ck->checkCode($code)->exlen;
