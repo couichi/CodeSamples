@@ -54,21 +54,23 @@ else
 	if($_SESSION['code']!=$_POST['code'] || $_SESSION['description']!=$_POST['description'])
 	{
 		//update codes
-		$res[] = $db->updateCode($_POST);
+		$res['code'] = $db->updateCode($_POST);
 	}
 	else
 	{
+		$res['code'] = 1;
 	}
 
 	if($_SESSION['tags']!=$_POST['tag'])
 	{
 		//update tags
 		
-		$res[] = $db->updateTags($_POST['tag']);
+		$res['tag'] = $db->updateTags($_POST['tag']);
 	}
 	else
 	{
 	//no update
+		$res['tag'] = 1;
 	}
 
 
