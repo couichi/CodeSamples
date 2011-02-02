@@ -82,7 +82,7 @@ if(array_sum($res)!=2)
 }
 else
 {
-	echo "success";
+	//echo "success";
 	$jump = new Jump();
 }
 
