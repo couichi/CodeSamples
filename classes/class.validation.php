@@ -46,7 +46,7 @@ class Validation
 		$lines = explode("\n",$code);
 		if(count($lines)>40)
 		{
-			$this->boolean[] = -1;
+			$this->boolean['code'] = -1;
 			return $this;
 		}
 		else
@@ -55,7 +55,7 @@ class Validation
 			{
 				if(strlen($val)>80)
 				{
-					$this->boolean[] = -1;
+					$this->boolean['code'] = -1;
 					$this->exlen = strlen($val);
 					echo $this->exlen;
 					echo "$val is too long!<br>";
@@ -64,17 +64,17 @@ class Validation
 				}
 			}
 			
-			$this->boolean[] = 0;
+			$this->boolean['code'] = 0;
 			return $this;
 		}
 	}
 	
 	public function checkTag($post)
 	{
-		if($post=="Libraries/Implementations/Softwares")
+		if($post=="Libraries/Implementations/Softwares" || $post="")
 		{
 			//echo "err";
-			$this->boolean[] = 0;
+			$this->boolean['tag'] = 0;
 			return $this;
 		}
 		
@@ -83,17 +83,17 @@ class Validation
 		{
 			if(strlen($tag)>64)
 			{
-			$this->boolean[] = -1;
+			$this->boolean['tag'] = -1;
 			return $this;
 			}
 			elseif(!preg_match('/^[A-Za-z0-9-_\s]+$/', $tag))
 			{
-			$this->boolean[] = -1;
+			$this->boolean['tag'] = -1;
 			return $this;
 			}
 		}
 		
-			$this->boolean[] = 0;
+			$this->boolean['tag'] = 0;
 			return $this;
 
 		
@@ -103,12 +103,12 @@ class Validation
 	{
 		if($lang<0 || $lang>52)
 		{
-			$this->boolean[] = -1;
+			$this->boolean['lang'] = -1;
 			return $this;
 		}
 		else
 		{
-			$this->boolean[] = 0;
+			$this->boolean['lang'] = 0;
 			return $this;
 		}
 
@@ -117,7 +117,7 @@ class Validation
 	public function checkDescription($description)
 	{
 		
-		$this->boolean[]=0;
+		$this->boolean['desc']=0;
 		return $this;
 
 	}
@@ -134,5 +134,9 @@ class Validation
 		}
 	}
 	
+	public function getErrorFlag()
+	{
+		return $this->boolean;
+	}
 	
 }

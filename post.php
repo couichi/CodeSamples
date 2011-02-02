@@ -62,6 +62,9 @@ else
 	else
 	{
 		echo "Invalid value!";
+		$error_flag = $validate->getErrorFlag();
+		
+		print_rp($error_flag);
 	}
 	
 	
