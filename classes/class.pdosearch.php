@@ -103,6 +103,8 @@ class PdoSearch extends PdoConnect
 				break;
 			case 'sql':
 				echo '<script type="text/javascript" src="sh/scripts/shBrushSql.js"></script> ';
+			case 'python':
+				echo '<script type="text/javascript" src="sh/scripts/shBrushPython.js"></script> ';
 				break;
 		}
 	}

@@ -3,16 +3,16 @@ include "includes/header.php";
 
 
 include "includes/autoload.php";
-
 
 
 
 echo "<a href='search_all.php?lang=35'>PHP</a> ";
 echo "<a href='search_all.php?lang=27'>Lisp</a> ";
 echo "<a href='search_all.php?lang=47'>SQL</a> ";
+echo "<a href='search_all.php?lang=39'>Python</a> ";
 
 echo "<a href=''>scheme+gimp</a> <a href=''>Assembly</a> <a href=''>JavaScript</a>";
-echo "<a href=''>Java</a> <a href=''>Python</a><br>";
+echo "<br>";
 
 
 
