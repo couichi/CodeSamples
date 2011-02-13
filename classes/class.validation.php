@@ -79,6 +79,7 @@ class Validation
 		}
 		
 		$tags = explode(",",$post);
+		$pattern ="/[\x01-\x7f]/";//no ascii code
 		foreach($tags as $tag)
 		{
 			if(strlen($tag)>64)
@@ -86,9 +87,9 @@ class Validation
 			$this->boolean['tag'] = -1;
 			return $this;
 			}
-			elseif(!preg_match('/^[A-Za-z0-9-_\s]+$/', $tag))
+			elseif(preg_match($pattern, $tag))
 			{
-			$this->boolean['tag'] = -1;
+			$this->boolean['tag'] = -2;
 			return $this;
 			}
 		}
