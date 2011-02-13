@@ -1,3 +1,5 @@
 images/
-ignore.txt
+ignore.*
 ignore2.txt
+#*
+*.*~
