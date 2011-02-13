@@ -1,5 +1,5 @@
 images/
 ignore.*
 ignore2.txt
-#*
+*.*#
 *.*~
