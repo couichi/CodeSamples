@@ -3,3 +3,5 @@ ignore.*
 ignore2.txt
 *.*#
 *.*~
+test.php
+test.html
