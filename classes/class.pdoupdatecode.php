@@ -128,14 +128,16 @@ class PdoUpdateCode extends PdoConnect
 			}
 		}
 		
-		$tagcsv=commaRm($tagcsv);
+		$tags=$this->commaRm($tagcsv);
+
 		$tags = explode(",",$tags);
 		
 		foreach($tags as $tag)
 		{
 			if(strlen($tag)<2)
 			{
-				
+			  echo $tag;
+			  return -2;
 			}
 			else
 			{
@@ -155,11 +157,18 @@ class PdoUpdateCode extends PdoConnect
 				else make a new code_tag rec
 			else make new tag and make code_tag rec
 		*/
-		$sql = "call update_tag(?,?)";
-		$sth = $this->pdo->prepare($sql);
-		$sth->bindParam(1,$tag);
-		$sth->bindParam(2,$codeid);
-		$res = $sth->execute;
+	  //echo $tag;
 
+
+	    $sql = "call update_tag(?,?)";
+	    $sth = $this->pdo->prepare($sql);
+	    $sth->bindParam(1,$tag);
+	    $sth->bindParam(2,$codeid);
+	    $res = $sth->execute;
+
+	  /*
+	    $sql = "call update_tag($tag,$codeid)";
+	    $res = $this->pdo->exec($sql) or die($res->errorInfo());
+	  */	
 	}
 }
