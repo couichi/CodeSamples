@@ -31,9 +31,9 @@ class DbConfig
 	
 	public function squery($sql)
 	{
-		$res = $this->pdo->query($sql);
-		$this->pdo->closeCursor();
-		return $res;
+		$this->res = $this->pdo->query($sql);
+		//$this->res->closeCursor();
+		return $this;
 	}
 	
 	public function display($cols)

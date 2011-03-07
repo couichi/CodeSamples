@@ -1,15 +1,20 @@
+//A feeble attempt to impliment a tag suggestion feature by myself.
+//it worked once but never completely,
+//I'll replace this with some tested library
+//when I find a time, later on, that is.
+
+
 $(document).ready(function() {
 	lang_name = "";
 	$("#lang").change(function(){
-		
 		var lang = $(this).val();
 		$.post(
 		"get_tags.php", 
 		{ Lang: $(this).val() },
 		function(json){ lang_name = eval(json);}
-		
 		);
 	});
+
 	
 	$("#tag").keyup(function(){
 		
