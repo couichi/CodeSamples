@@ -1,34 +1,34 @@
-*�͂��߂�
-����CodeSamples�́A�l�X�Ȍ���̃T���v���\�[�X�R�[�h���W�ς��A���Ȋw�K�̗ƂƂ��邱�Ƃ�ړI�Ƃ��č\�z���܂����B
-�������K�v�Ƃ����@�\�́A
-�P�D�\�[�X�R�[�h�̓o�^
-�Q�D�\�[�X�R�[�h�̌���
-	�^�O�ł̌���
-	����ł̌���
-	�s�����\��
-�R�D�\�[�X�R�[�h�̃V���^�b�N�X�n�C���C�g
-�S�D�^�O�T�W�F�X�`����
-��4�ł����B
+﻿*はじめに
+このCodeSamplesは、様々な言語のサンプルソースコードを集積し、自己学習の糧とすることを目的として構築しました。
+自分が必要とした機能は、
+１．ソースコードの登録
+２．ソースコードの検索
+	タグでの検索
+	言語での検索
+	行数順表示
+３．ソースコードのシンタックスハイライト
+４．タグサジェスチョン
+の4つでした。
 
-�P�C�Q�͎����ς݂ł��B�����e�X�g�P�[�X����������͂��Ă��Ȃ��̂ŁA�o�O������܂����A
-���͒l�`�F�b�N���s���S�ł��B
-�R�̃V���^�b�N�X�n�C���C�g��
-SyntaxHighlighter�𗘗p���Ă��܂��B
+１，２は実装済みです。ただテストケースを書いたりはしていないので、バグもありますし、
+入力値チェックも不完全です。
+３のシンタックスハイライトは
+SyntaxHighlighterを利用しています。
 http://alexgorbatchev.com/SyntaxHighlighter/
-�S��jQuery�ł̕׋��Ɏ����Ŏ������܂������Asuggest.js
+４はjQueryでの勉強に自分で実装しましたが、suggest.js
 http://www.enjoyxstudy.com/javascript/suggest/
-�̂悤�ȊO���̃��C�u�����̕����o�����ǂ��̂ŁA���ꃊ�v���[�X�������ł��B
+のような外部のライブラリの方が出来が良いので、何れリプレースするつもりです。
 
 
-*����҂ɂ���
-�Ɗw�Ńv���O���~���O��׋����Ă��܂��BPHP�̎g�p���͊��ƒ����A���߂ĐG�����̂͐��N�O�ŁAwindows��phpdev����ł����B�u�����N�͂�����A�f���I�Ɏ����ɕK�v�ȃX�N���v�g���������߂ɂ��̓s�x�w�K���ė��܂����B
-�I�u�W�F�N�g�w���v���O���~���O�ɂ��Ċw�юn�߂��̂�2010�N������ŁA�������삵�Ă����������Ԃƌ��ς��莞�Ԃ��Ǘ�����S�[���ETodo�Ǘ�Web�A�v���P�[�V�����̐���ɁA�R�[�h�ʂ�3���s�𒴂��������肩����E������������ł��B
-�I�u�W�F�N�g�w���ł́A����CodeSamples�����߂Ă̐��앨�ł��B
-Git�͍��N�ɓ����Ă���g���n�߂܂����B���݂�TDD���w�΂Ȃ���΂ƍl���Ă��܂��B
+*制作者について
+独学でプログラミングを勉強しています。PHPの使用歴は割と長く、初めて触ったのは数年前で、windowsのphpdevからでした。ブランクはありつつも、断続的に自分に必要なスクリプトを書くためにその都度学習して来ました。
+オブジェクト指向プログラミングについて学び始めたのは2010年末からで、当時制作していた投下時間と見積もり時間を管理するゴール・Todo管理Webアプリケーションの制作に、コード量が3万行を超えたあたりから限界を感じたからです。
+オブジェクト指向では、このCodeSamplesが初めての制作物です。
+Gitは今年に入ってから使い始めました。現在はTDDを学ばなければと考えています。
 
 
-*�J����
-XAMPP for Windows version 1.7.3���g�p���܂����B
+*開発環境
+XAMPP for Windows version 1.7.3を使用しました。
 Apache 2.2.14 (IPv6 enabled) + OpenSSL 0.9.8l
 MySQL 5.1.41 + PBXT engine
 PHP 5.3.1
@@ -38,21 +38,21 @@ FileZilla FTP Server 0.9.33
 Mercury Mail Transport System 4.72
 
 
-*�\�[�X�R�[�h��ǂ܂����ւ̒���
-�R�����g�͂قږ����Ǝv���ĉ������B�ς݂܂���B
-����Form�̕ϐ��́A�f�[�^�x�[�X�̃t�B�[���h���Ƃقڈ�v���Ă��܂����A
-����Form�̕ϐ�'tags'�ɑΉ�����t�B�[���h����'specialities'�܂���'spec'�ƂȂ��Ă��܂��B
-�f�[�^�x�[�X�̃e�[�u���݌v���������ɂ�'specialities'���ǂ��l���Ɏv�����̂ł��B
+*ソースコードを読まれる方への注意
+コメントはほぼ無いと思って下さい。済みません。
+入力Formの変数は、データベースのフィールド名とほぼ一致していますが、
+入力Formの変数'tags'に対応するフィールド名は'specialities'または'spec'となっています。
+データベースのテーブル設計をした時には'specialities'が良い考えに思えたのです。
 
 
-*�f�[�^�x�[�X
-�o�b�N�G���h�̃f�[�^�x�[�X��MySQL�ł��B
-�e�[�u���͉��L��5�ł��B
-codes - �T���v���\�[�X�R�[�h��ۑ����܂�
-specialities - �^�O��ۑ����܂�
-langs - CodeSamples����������̃��X�g�ł�
-code_specs - �\�[�X�R�[�h�ƃ^�O��R�t���܂�
-lang_specs - ����ƃ^�O��R�t���܂�
+*データベース
+バックエンドのデータベースはMySQLです。
+テーブルは下記の5つです。
+codes - サンプルソースコードを保存します
+specialities - タグを保存します
+langs - CodeSamplesが扱う言語のリストです
+code_specs - ソースコードとタグを紐付けます
+lang_specs - 言語とタグを紐付けます
 
 
 CREATE TABLE `codes` (
@@ -96,6 +96,6 @@ CREATE TABLE `lang_specs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
 
-*�Ō��
-�ǂ�ł��������Ăǂ������肪�Ƃ��������܂��B
-���萔�Ŗ�����ΐ���t�B�[�h�o�b�N���������B
+*最後に
+読んでくださってどうもありがとうございます。
+お手数で無ければ是非フィードバックを下さい。
