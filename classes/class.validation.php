@@ -71,7 +71,7 @@ class Validation
 	
 	public function checkTag($post)
 	{
-		if($post=="Libraries/Implementations/Softwares" || $post="")
+		if($post=="Libraries/Implementations/Softwares" || $post=="")
 		{
 			//echo "err";
 			$this->boolean['tag'] = 0;
