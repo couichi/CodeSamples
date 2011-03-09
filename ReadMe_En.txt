@@ -24,7 +24,8 @@ is much better, so I am intending to replace it later on.
 *About me
 I am a self-taught PHP programmer. I have been using it for more than several years now. 
 I started using it with PHPdev on windows. However, 
-there were intermissions in my study history of PHP since I only studied it whenever I needed to write something.
+there were intermissions in my study history of PHP 
+since I only studied it whenever I needed to write something.
 I started studying Object Oriented Programming from about the end of year 2010 
 because a web application I was working on at that time, which manages your goal, 
 to-dos, invested time  and estimation, 
